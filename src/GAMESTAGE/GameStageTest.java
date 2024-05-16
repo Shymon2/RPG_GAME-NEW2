@@ -351,9 +351,9 @@ public class GameStageTest implements Serializable
                     System.out.println("Current weapon: " + this.player.getCurrentWeapon());
                     System.out.println("Current armor: " + this.player.getCurrentArmor());
                     System.out.printf("[%13s | %8s | %8s | %8s] \n", "HP: " + player.getHP() + "/" + player.getMaxHp(),
-                                                                            "Atk: " + player.getAttack(),
-                                                                            "Def: " + player.getDefense(),
-                                                                            "Rag: " + player.getRange());            
+                                                                    "Atk: " + player.getAttack(),
+                                                                    "Def: " + player.getDefense(),
+                                                                    "Rag: " + player.getRange());            
                 }
                 else System.out.println("Invalid choice");
             }while(status == true);
