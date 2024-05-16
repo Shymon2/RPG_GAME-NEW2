@@ -266,6 +266,10 @@ public class GameStageTest implements Serializable
             this.invent.displayInventory();
             System.out.println("Attack weapon: " + this.player.getCurrentWeapon());
             System.out.println("Defense weapon: " + this.player.getCurrentArmor());
+            System.out.printf("[%13s | %8s | %8s | %8s] \n", "HP: " + player.getHP() + "/" +  player.getMaxHp(),
+                                                                    "Atk: " + player.getAttack(),
+                                                                    "Def: " + player.getDefense(),
+                                                                    "Rag: " + player.getRange());  
             int choice, choice1;
             boolean status = true;
             do{              
@@ -300,11 +304,7 @@ public class GameStageTest implements Serializable
                                 this.player.equipPotion(this.invent.getItem(choice -1));
                                 this.invent.removeItem(choice - 1);
                             }
-                            System.out.println("Equip sucessfully");
-                            System.out.println("\n------------------------------------------------------\n");
-                            this.invent.displayInventory();
-                            System.out.println("Current weapon: " + this.player.getCurrentWeapon());
-                            System.out.println("Current armor: " + this.player.getCurrentArmor());
+                            System.out.println("Equip sucessfully");  
                             status1 = false;
                         }     
                         else if(choice1 == 2){
@@ -330,10 +330,6 @@ public class GameStageTest implements Serializable
                             }
                             else if(invent.getItem(choice - 1) instanceof Potion)
                                 System.out.println("Unequip fail. Potion can not unequip !!!");
-                            System.out.println("\n------------------------------------------------------\n");
-                            this.invent.displayInventory();
-                            System.out.println("Current weapon: " + this.player.getCurrentWeapon());
-                            System.out.println("Current armor: " + this.player.getCurrentArmor());
                             status1 = false;
                         }  
                         else if(choice1 == 3){
@@ -343,21 +339,21 @@ public class GameStageTest implements Serializable
                                 this.player.unequipArmor();
                             this.invent.removeItem(choice - 1);
                             System.out.println("Remove sucessfully");
-                            System.out.println("\n------------------------------------------------------\n");
-                            this.invent.displayInventory();
-                            System.out.println("Current weapon: " + this.player.getCurrentWeapon());
-                            System.out.println("Current armor: " + this.player.getCurrentArmor());
                             status1 = false;
                         }
                         else if(choice1 == 4){            
-                            System.out.println("\n------------------------------------------------------\n");
-                            this.invent.displayInventory();
-                            System.out.println("Current weapon: " + this.player.getCurrentWeapon());
-                            System.out.println("Current armor: " + this.player.getCurrentArmor());
                             status1 = false;
                         }
                         else System.out.println("Invalid choice");
-                    } while (status1 == true);          
+                    } while (status1 == true);
+                    System.out.println("\n------------------------------------------------------\n");
+                    this.invent.displayInventory();
+                    System.out.println("Current weapon: " + this.player.getCurrentWeapon());
+                    System.out.println("Current armor: " + this.player.getCurrentArmor());
+                    System.out.printf("[%13s | %8s | %8s | %8s] \n", "HP: " + player.getHP() + "/" + player.getMaxHp(),
+                                                                            "Atk: " + player.getAttack(),
+                                                                            "Def: " + player.getDefense(),
+                                                                            "Rag: " + player.getRange());            
                 }
                 else System.out.println("Invalid choice");
             }while(status == true);
